@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 70px;
+  z-index: 999;
+  padding: 0 15px;        /* padding for left + right */
+  top: 0;            /* remove default margin */
+  position: sticky;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 15px;               /* spacing between logo & deliver */
+  margin-right: 20px;      /* space before search bar */
+}
+
+/* LOGO */
+.logo {
+  width: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  margin-right: 10px;      /* space before deliver */
+}
+
+/* ============================
+   DELIVERY
+============================ */
+.deliver {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;            /* added padding */
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.locationIcon {
+  font-size: 18px;
+}
+
+.deliverText p {
+  margin: 0;
+  font-size: 10px;
+}
+
+.deliverText span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ============================
+   SEARCH BAR
+============================ */
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 20px; 
+  width: 100%;         /* added margin to separate left/right */
+
+}
+
+.searchCategory {
+  padding: 10px;
+  background: #e6e6e6;
+  border: none;
+  outline: none;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px;           /* added padding */
+  border: none;
+  outline: none;
+}
+
+.searchButton {
+  padding: 10px 12px;      /* added button padding */
+  border: none;
+  background: #febd69;
+}
+
+.searchButton:hover {
+  background: #d49644;
+}
+
+/* ============================
+   RIGHT SIDE
+============================ */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 25px;                /* spacing between items */
+  margin-left: 20px;        /* space after search bar */
+}
+
+/* LANGUAGE */
+.language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;             /* added padding */
+}
+
+.flag {
+  width: 25px;
+}
+
+.langSelect {
+  background: #1a1a1a;
+  border: none;
+  color: white;
+}
+
+/* ACCOUNT + ORDERS */
+.option {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  padding: 5px;             /* spacing around text */
+  margin: 0 10px;           /* space between account & orders */
+}
+
+.option p {
+  margin: 0;
+  font-size: 10px;
+}
+
+/* ============================
+   CART
+============================ */
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;             /* added padding */
+  margin-left: 10px;
+}
+
+.cartIcon {
+  font-size: 30px;
+}
+
+.cartCount {
+  position: absolute;
+  top: -5px;
+  left: 18px;
+  font-size: 18px;
+  background: #1a1a1a;
+  color: orange;
+  font-weight: bold;
+}
