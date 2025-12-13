@@ -5,9 +5,12 @@ import { BiCart } from "react-icons/bi";
 import "./Header.css";
 
 
+
 function Header() {
   return (
+  
     <header className="header">
+  
 
       {/* LEFT SIDE */}
       <div className="left">
@@ -76,6 +79,7 @@ function Header() {
           <p>Returns</p>
           <span>& Orders</span>
         </a>
+        
 
         {/* CART */}
         <a href="/" className="cart">
@@ -84,9 +88,12 @@ function Header() {
         </a>
 
       </div>
+     
 
     </header>
+    
   );
+  
 }
 
 export default Header;

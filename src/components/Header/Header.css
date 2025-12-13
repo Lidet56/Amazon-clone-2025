@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   padding: 5px;             /* added padding */
-  margin-left: 10px;
+  margin-left: 0;
 }
 
 .cartIcon {
@@ -163,4 +163,88 @@
   background: #1a1a1a;
   color: orange;
   font-weight: bold;
+}
+.deliver:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.logo:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.option:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.language:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.cart:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.lower-header {
+  background-color: #222f3d;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+ 
+}
+
+.lower-header ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.lower-header li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.lower-header li:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px;
+}
+@media screen and (max-width: 576px) {
+
+  /* Make header items stack vertically */
+  .header {
+    flex-direction: column !important;
+    height: auto;
+    padding: 10px;
+  }
+
+
+  .lower-header ul li:not(:first-child) {
+    display: none;
+  }
+
+  
+  .language {
+    display: none;
+  }
+
+  /* Make search bar full width */
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Center search input */
+  .searchInput {
+    text-align: left;
+  }
+
+  /* Reduce spacing */
+  .right, .left {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
