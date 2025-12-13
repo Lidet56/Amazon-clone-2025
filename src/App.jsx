@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header/Header'
 import LowerHeader from './components/Header/LowerHeader'
+import Carousel from './components/Carousel/Carousel'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,6 +10,7 @@ function App() {
     <>
     <Header/>
     <LowerHeader/>
+    <Carousel/>
       
       
     </>
@@ -16,3 +18,4 @@ function App() {
 }
 
 export default App
+ 
