@@ -1,5 +1,6 @@
 import React from "react";
 import { SlLocationPin } from "react-icons/sl";
+import { Link } from 'react-router-dom'
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import "./Header.css";
@@ -14,7 +15,7 @@ function Header() {
 
       {/* LEFT SIDE */}
       <div className="left">
-
+       
         {/* LOGO */}
         <a href="/">
           <img
@@ -75,14 +76,14 @@ function Header() {
         </a>
 
         {/* ORDERS */}
-        <a href="/" className="option">
+        <a href="/orders" className="option">
           <p>Returns</p>
           <span>& Orders</span>
         </a>
         
 
         {/* CART */}
-        <a href="/" className="cart">
+        <a href="/cart" className="cart">
           <BiCart className="cartIcon" />
           <span className="cartCount">0</span>
         </a>
