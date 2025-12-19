@@ -6,6 +6,7 @@ import axios from 'axios'
 import { productUrl } from '../../Api/endPoints'
 import { useParams } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import { FaLinesLeaning } from 'react-icons/fa6'
 
 function Results() {
   const [results, setResults] = useState([])
@@ -36,16 +37,25 @@ function Results() {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={classes.products_container}>
+          <div className={classes.products_container}>
           {results?.map((product) => (
-            <ProductCard
-              key={product.id}
-              renderAdd={true}
-              product={product}
-            />
-          ))}
+    <section className={classes.cart_product} key={product.id}>
+      <ProductCard
+        renderAdd={true}
+        product={product}
+        renderDesc={false}
+      />
+    </section>
+  ))}
         </div>
       )}
+
+
+
+          <div className={classes.btn_container}>
+      <button onClick={() => increment(item)}>+</button>
+      <button onClick={() => decrement(item.id)}>-</button>
+    </div>
     </section>
   </LayOut>
 );

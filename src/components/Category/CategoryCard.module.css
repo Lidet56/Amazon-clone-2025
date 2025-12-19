@@ -1,6 +1,6 @@
-.category_card {
-  height: 350px;
-  width: 100px;
+ .category_card {
+  width: 100%;
+  
   max-width: 280px;
   padding: 10px;
   border-radius: 8px;
@@ -13,31 +13,32 @@
 .category_card img {
   width: 80%;
   object-fit: contain;
-  max-height: 250px;
+ 
   padding: 0px 10px;
   height: 300px;
   border-radius: 6px;
+  margin: 10px 0;
+  overflow: hidden;
+  
 
 }
 
 
-/* .category_card a{
-  text-decoration: none;
-  color: rgb(35, 35, 35);
-} */
+
+
 
 .category_card h2 {
     font-size: 1.2rem;
     margin-bottom: 8px;
+    text-align: center;
 
 }
 
 
 .category_card p{
-  /* padding: 5px; */
-  /* margin-left: 15px; */
-  /* font-size: 12px; */
+ 
   font-weight: bold;
   color: rgb(9, 132, 209);
   margin-top: 5px;
-}
+
+} 

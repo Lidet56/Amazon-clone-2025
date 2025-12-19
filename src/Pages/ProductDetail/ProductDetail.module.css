@@ -1,0 +1,23 @@
+.pd_detail_continer{
+  gap: 20px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.pd_detail_continer img{
+  width: 50%;
+}
+/* 
+.image_container {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_image {
+  max-width: 1%;
+  max-height: 100%;
+  object-fit: contain;
+} */

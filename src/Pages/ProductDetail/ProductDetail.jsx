@@ -23,13 +23,16 @@ function ProductDetail() {
   }, [])
 
   return (
+    
     <LayOut>
-      <ProductCard product={product} flexed 
-      renderDesc={true}/>
+      <section className={classes.pd_detail_continer}>
+      <ProductCard product={product} flex={true}
+      renderDesc={true}
+      renderAdd={true}/>
+      </section>
     </LayOut>
+    
   )
 }
 
-
-
-export default ProductDetail
+  export default ProductDetail

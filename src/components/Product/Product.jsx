@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import ProductCard from "./ProductCard"
+import ProductCard from "./ProductCard"   
 import classes from "./Product.module.css"
 import Loader from '../../components/Loader/Loader'
 
@@ -32,6 +32,8 @@ const Product = () => {
                 <ProductCard
                   product={singleProduct}
                   key={singleProduct.id}
+                  renderAdd={true}
+                  renderDesc={false}
                 />
               )
             })

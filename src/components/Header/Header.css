@@ -16,7 +16,7 @@
   color: white;
   height: 70px;
   z-index: 999;
-  padding: 0 15px;        /* padding for left + right */
+  padding: 0 1px;        /* padding for left + right */
   top: 0;            /* remove default margin */
   position: sticky;
 }
@@ -24,7 +24,7 @@
 .left {
   display: flex;
   align-items: center;
-  gap: 15px;               /* spacing between logo & deliver */
+  gap: 1px;               /* spacing between logo & deliver */
   margin-right: 20px;      /* space before search bar */
 }
 

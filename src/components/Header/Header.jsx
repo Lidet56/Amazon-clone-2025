@@ -5,17 +5,25 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import "./Header.css";
 import { DataContext } from "../../components/DataProvider/DataProvider";
+import LowerHeader from './LowerHeader'
 
 
 
     function Header() {
+      
       // const [state, dispatch] = useContext(DataContext);
-      const [{basket}, dispatch]=useContext(DataContext)
+
+      const [{user,basket}, dispatch]=useContext(DataContext)
+      const totalItem=basket?.reduce((amount,item)=>{
+        return item.amount +amount;
+      },0)
+      console.log("HEADER BASKET:", basket);
       
 
     
   return (
    
+    <>
     <header className="header">
   
       <section className="clas fixed"></section>
@@ -23,13 +31,13 @@ import { DataContext } from "../../components/DataProvider/DataProvider";
       <div className="left">
        
         {/* LOGO */}
-        <a href="/">
+        <Link to="/">
           <img
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             alt="amazon logo"
             className="logo"
           />
-        </a>
+        </Link>
 
         {/* DELIVER TO */}
         <div className="deliver">
@@ -76,29 +84,30 @@ import { DataContext } from "../../components/DataProvider/DataProvider";
         </div>
 
         {/* ACCOUNT */}
-        <a href="/" className="option">
+        <Link to="/" className="option">
           <p>Hello, Sign in</p>
           <span>Account & Lists</span>
-        </a>
+        </Link>
 
         {/* ORDERS */}
-        <a href="/orders" className="option">
+        <Link to="/orders" className="option">
           <p>Returns</p>
           <span>& Orders</span>
-        </a>
+        </Link>
         
 
         {/* CART */}
-        <a href="/cart" className="cart">
-          <BiCart className="cartIcon" />
-          <span className="cartCount">{basket.length}</span>
-        </a>
+        <Link to="/cart" className="cart">
+  <BiCart className="cartIcon" />
+  <span className="cartCount">{totalItem}</span>
+</Link>
 
       </div>
      
 
     </header>
-    
+    <LowerHeader/>
+    </>
   );
   
 }
