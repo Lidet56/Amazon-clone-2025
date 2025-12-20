@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
+import {HashRouter, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing/Landing";
 import SignIn from "./Pages/Auth/Singnup";
 import Payment from "./Pages/Payment/Payment";
@@ -11,7 +11,7 @@ import ProductDetail from './Pages/ProductDetail/ProductDetail.jsx'
 
 function Routing() {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<SignIn />} />
@@ -23,7 +23,7 @@ function Routing() {
 
         <Route path="/cart" element={<Cart />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
