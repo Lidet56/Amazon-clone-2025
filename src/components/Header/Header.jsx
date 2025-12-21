@@ -84,7 +84,7 @@ import LowerHeader from './LowerHeader'
         </div>
 
         {/* ACCOUNT */}
-        <Link to="/" className="option">
+        <Link to="/auth" className="option">
           <p>Hello, Sign in</p>
           <span>Account & Lists</span>
         </Link>

@@ -1,0 +1,109 @@
+/* page wrapper */
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* amazon logo */
+.login img {
+  margin: 30px auto;
+  object-fit: contain;
+  width: 100px;
+}
+
+/* card */
+.login_container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  background-color: white;
+}
+
+/* title */
+.login_container h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* form layout */
+.login_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* input groups */
+.login_container form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+/* labels */
+.login_container label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* inputs */
+.login_container input {
+  height: 31px;
+  padding: 3px 7px;
+  background-color: white;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+}
+
+/* input focus */
+.login_container input:focus {
+  outline: none;
+  border-color: #007185;
+  box-shadow: 0 0 0 2px rgba(0, 113, 133, 0.2);
+}
+
+/* SIGN IN button */
+.login_signInBotton {
+  margin-top: 10px;
+  height: 31px;
+  border-radius: 3px;
+  border: 1px solid #a88734;
+  background: #f0c14b;
+  cursor: pointer;
+}
+
+/* hover */
+.login_signInBotton:hover {
+  background: #ddb347;
+}
+
+/* agreement text */
+.login_container p {
+  font-size: 12px;
+  margin-top: 18px;
+  line-height: 1.5;
+}
+
+/* register button */
+.login_registerButton {
+  margin-top: 20px;
+  height: 31px;
+  border-radius: 3px;
+  border: 1px solid #a6a6a6;
+  background: #e7e9ec;
+  cursor: pointer;
+}
+
+/* register hover */
+.login_registerButton:hover {
+  background: #d5d9d9;
+}
+
+
+
+
