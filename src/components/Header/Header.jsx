@@ -6,6 +6,7 @@ import { BiCart } from "react-icons/bi";
 import "./Header.css";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import LowerHeader from './LowerHeader'
+import {auth} from"../../Utility/firebase"
 
 
 
@@ -84,17 +85,31 @@ import LowerHeader from './LowerHeader'
         </div>
 
         {/* ACCOUNT */}
-        <Link to="/auth" className="option">
-          <p>Hello, Sign in</p>
-          <span>Account & Lists</span>
-        </Link>
+        <Link to={!user && "/auth"} className="option">
+          <div>
+  {user ? (
+    <>
+      <p>Hello {user?.email?.split("@")[0]}</p>
+      <span onClick={() => auth.signOut()}>Sign Out</span>
+    </>
+  ) : (
+    <>
+      <p>Hello, Sign In</p>
+      <span>Account & Lists</span>
+    </>
+  )}
+</div>
+</Link>
 
         {/* ORDERS */}
         <Link to="/orders" className="option">
           <p>Returns</p>
           <span>& Orders</span>
         </Link>
-        
+
+        {/* payment */}
+        <Link to="/payment">
+        </Link>
 
         {/* CART */}
         <Link to="/cart" className="cart">

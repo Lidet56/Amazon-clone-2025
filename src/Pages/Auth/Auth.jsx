@@ -1,30 +1,112 @@
-import React from "react";
+import { useState, useContext } from "react";
 import classes from "./Signup.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { auth } from "../../Utility/firebase";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import {DataContext} from"../../components/DataProvider/DataProvider"
+import { ClipLoader } from "react-spinners";
+import { Type } from "../../Utility/action.type";
+
 
 function Auth() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState({
+  signIn: false,
+  signUP: false,
+});
+  const [{user}, dispatch] = useContext(DataContext)
+  const navigate = useNavigate() 
+  const navStateData = useLocation()
+  console.log(navStateData);
+
+// console.log(user);
+
+  // navStateData = useLocation();
+  
+ const authHandler = async (e) => {
+  e.preventDefault();
+  console.log(e.target.name);
+
+  if (e.target.name == "signin") {
+    // firebase auth
+    setLoading({...loading, signIn:true})
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userInfo) => {
+        
+        dispatch({
+          type:Type.SET_USER,
+          User:userInfo.user
+        })
+        setLoading({...loading, signIn:false })
+        navigate(navStateData?.state?.redirect || "/");
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.message);
+        setLoading({...loading, signIn:false})
+      });
+  } else {
+      setLoading({...loading, signUP:true})
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userInfo) => {
+    
+        dispatch({
+          type:Type.SET_USER,
+          User:userInfo.user
+        })
+          setLoading({...loading, signUP:false})
+            navigate(navStateData?.state?.redirect || "/");
+      })
+      .catch((err) => {
+         setError(err.message);
+         setLoading({...loading, signUP:false})
+      });
+  }
+};
+
+  
   return (
     <section className={classes.login}>
       {/* logo */}
-      <Link>
+      <Link to= {"/"}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
           alt=""
         />
       </Link>
+        
       {/* form */}
       <div className={classes.login_container}>
         <h1>Sign In</h1>
+           {navStateData?.state?.msg && (
+           <small
+           style={{
+            padding: "5px",
+            textAlign: "center",
+            color: "red",
+            fontWeight: "bold",
+            }}
+                >
+                  {navStateData?.state?.msg}
+                </small>
+              )}
+
         <form action="">
           <div>
             <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" />
+            <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" id="email" />
           </div>
           <div>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" id="password" />
           </div>
-          <button className={classes.login_signInBotton}>Sign In</button>
+          <button type="submit" onClick={authHandler} name ="signin" className={classes.login_signInBotton}>{loading.signIn ? (<ClipLoader color="#000" size={15} />) : (
+            "Sign In"
+          )}
+            </button>
         </form>
 
         {/*agreement*/}
@@ -33,8 +115,17 @@ function Auth() {
         </p>
 
           {/* create account btn */}
-          <button className={classes.login_registerButton
-          }>Create your Amazon Account</button>
+          <button type="submit" onClick={authHandler} name='signup'className={classes.login_registerButton}
+          >
+          {loading.signUP ? (<ClipLoader color="#000" size={15} />) : (
+            "Create your Amazon Account"
+          )}
+         
+          </button>
+          {
+            error && (
+              <small style={{ paddingTop: "5px", color: "red" }}> {error} </small>
+         ) }
       </div>
     </section>
   );
