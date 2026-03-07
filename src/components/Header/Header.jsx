@@ -46,7 +46,7 @@ import {auth} from"../../Utility/firebase"
 
           <div className="deliverText">
             <p>Deliver to</p>
-            <span>Ethiopia</span>
+            <span>USA</span>
           </div>
         </div>
 

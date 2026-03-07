@@ -3,7 +3,7 @@ import LayOut from '../../components/LayOut/LayOut'
 import { DataContext } from '../../components/DataProvider/DataProvider';
 import ProductCard from '../../components/Product/ProductCard';
 import {Link} from 'react-router-dom'
-import styles from './cart.module.css'
+import styles from  "./Cart.module.css";
 import { Type } from '../../Utility/action.type';
 import { formatMoney } from '../../Utility/money';
 
